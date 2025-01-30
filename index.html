@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QOMH ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ff99cc, #ff3366);
+            background-image: url('https://i.postimg.cc/m2WNc2s7/bf76d91a-b843-49da-b903-55fa2c3aeb34.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        .note {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 80%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slide {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slide img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .video-container {
+            margin: 20px auto;
+        }
+
+        .valentine-message {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 20px;
+            color: #ffccff;
+        }
+
+        .ending-note {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #ffcccc;
+            margin-top: 30px;
+        }
+
+        .last-note {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: white;
+            margin-top: 30px;
+        }
+
+        @keyframes floatingHearts {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 2em;
+            top: 100vh;
+            left: 50%;
+            animation: floatingHearts 5s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <h1>QOMH ❤️</h1>
+    
+    <p class="note">Forever with you is where I want to be, holding your hand and looking into your eyes and loving you more and more with each passing moment.</p>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="https://i.postimg.cc/yxVc5mwy/f994779a-b3f2-48f7-b4d0-db75c24911b1.jpg" alt="Photo 1">
+            <img src="https://i.postimg.cc/m2WNc2s7/bf76d91a-b843-49da-b903-55fa2c3aeb34.jpg" alt="Photo 2">
+        </div>
+    </div>
+
+    <p class="valentine-message">No words can truly capture how much you mean to me, but if love were a language, my heart would speak only your name. ❤️✨</p>
+
+    <!-- Video -->
+    <div class="video-container">
+        <iframe src="https://streamable.com/e/1bfn9r" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <p class="valentine-message">I love you baby❣️</p>
+
+    <!-- New Slideshow at the End -->
+    <div class="slideshow-container">
+        <div class="slide new-slideshow">
+            <img src="https://i.postimg.cc/fWHHxk40/266eb126-c65e-4cce-b346-e3d9acd507b0.jpg" alt="Photo 1">
+            <img src="https://i.postimg.cc/T3SMQQZg/92e358b3-5575-4f12-8317-8dc982fe16eb.jpg" alt="Photo 2">
+            <img src="https://i.postimg.cc/CLzjRBZP/d8c0458c-5389-46cf-854c-a0c4ee4a0704.jpg" alt="Photo 3">
+            <img src="https://i.postimg.cc/W47kZ9W6/c8199786-85be-491a-9170-1610f5f7bbcd.jpg" alt="Photo 4">
+            <img src="https://i.postimg.cc/VktnFxWX/62ced412-f11e-4aa8-a741-03249f03f0b4.jpg" alt="Photo 5">
+        </div>
+    </div>
+
+    <!-- Last Note -->
+    <p class="last-note">❤️‍🔥❤️‍🔥Your touch sets my soul on fire and I am forever changed by the flames of our passion❤️‍🔥❤️‍🔥</p>
+    <p class="last-note">I LOVE YOU SO MUCH BABY</p>
+
+    <!-- Ending Note -->
+    <p class="ending-note">Happy Valentine’s Day my love 💞</p>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="https://files.catbox.moe/k5rgxq.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // JavaScript for Slideshow
+        function createSlideshow(slideClass) {
+            let index = 0;
+            function slideImages() {
+                let slides = document.querySelector(`.${slideClass}`);
+                let totalWidth = slides.clientWidth;
+                index = (index + 1) % slides.children.length;
+                slides.style.transform = `translateX(-${index * totalWidth}px)`;
+            }
+            setInterval(slideImages, 3000); // Change image every 3 seconds
+        }
+
+        createSlideshow("slide");
+        createSlideshow("new-slideshow");
+
+        // Create Floating Hearts
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
